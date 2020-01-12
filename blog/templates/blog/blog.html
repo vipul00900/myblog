@@ -1,0 +1,18 @@
+{% extends "personal/header.html" %}
+{% block content %}
+	
+	<div class="search-bar mt-sm-2 mr-2">
+		<form method="get">
+			<input type="text" class="form-control" name="q" id="id_q" placeholder="search...">
+		</form>
+	</div>
+
+	{% for post in object_list %}
+		<h5>{{ post.date|date:"Y-m-d" }}
+		<a href="/blog/{{post.id}}"> 
+		{{ post.title }}</a></h5>
+	{% endfor %}
+{% endblock %}
+
+
+
